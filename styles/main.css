@@ -478,10 +478,33 @@ footer .container .footer-nav .item a {
     display: inherit;
     position: relative;
   }
-  nav {
-    display: none;
+  .is-opened {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #3f43e0;
+    overflow-x: hidden;
+    padding-top: 300px;
+    transition: 0.5s;
   }
-
+  .is-opened ul {
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+  }
+  .is-opened li {
+    padding-bottom: 20px;
+  }
+  .is-opened .closebtn {
+    position: absolute;
+    top: 10%;
+    right: 120px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
   header {
     width: 500px;
     padding-left: 40px;
@@ -586,7 +609,7 @@ footer .container .footer-nav .item a {
     position: relative;
     left: 20px;
   }
-  header .container .burger.is-visible-mobile {
+  header .container .is-visible-mobile {
     display: inline-block;
     cursor: pointer;
     border: none;
@@ -605,9 +628,9 @@ footer .container .footer-nav .item a {
 }
 
 @media (min-width: 768px) {
-  .page {
+  /* .page {
     width: 150%;
-  }
+  } */
   .hero .container .hero__desc {
     max-width: 250px;
   }
@@ -621,7 +644,6 @@ footer .container .footer-nav .item a {
     margin-left: 150px;
     margin-right: 200px;
   }
-
   .howItWorks .widgets {
     display: flex;
     flex-direction: column;

@@ -1,0 +1,646 @@
+/*-------------------١--------------------------*/
+/*                  ملحوظات                     */
+/*
+ملحوظة عامة:لقد  تركت لكم تعليقات لتساعدك علي تنظيم الملف بالشكل المثالي
+تأكد من أن آخر جزء هو الجزء الحاوي لكل ما هو متعلق بشكل الصفحة على الهواتف والتابلت
+إذا كان لديك أي سؤال من فضلك إرسل لي الكود وشرح المشكلة علي البريد الالكتروني
+tony@barmej.com
+*/
+/*----------------------------------------------*/
+
+/*----------------------١-----------------------*/
+/*
+Fonts & Font-faces سنقوم بوضع جميع الخطوط التي سنحتاجها هنا
+ملحوظة: إسم الخط هو إما
+Avenir Next 
+أو إن لم تجده فيمكنك استعمال خط 
+Lato
+*/
+/*---------------------------------------------*/
+@font-face {
+  src: url(../fonts/AvenirNext-Regular.woff2) format("woff2"),
+    url(../fonts/AvenirNext-Regular.woff) format("woff");
+  font-family: Avenir-Next;
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  src: url(../fonts/AvenirNext-Bold.woff2) format("woff2"),
+    url(../fonts/AvenirNext-Bold.woff) format("woff");
+  font-family: Avenir-Next-Bold;
+  font-weight: bold;
+}
+/*----------------------٢-----------------------*/
+/*                  DEFAULTS                    */
+/*
+يجب عليك هنا وضع أي من الأنماط العامة الخاصة بوسوم مثل
+html, body, h1, h2, p 
+وهي الأنماط التي تنطبق على الموقع بشكل عام وكل صفحاته وليس على عنصر معين في صفحة معينة
+*/
+/*----------------------------------------------*/
+html {
+  font-family: Avenir-Next, lato;
+  font-size: 10px;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style-type: none;
+}
+p {
+  font-size: 1.6rem;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+.is-secondary {
+}
+/*----------------------٣-----------------------*/
+/*               HELPER CLASSES                 */
+/*
+يجب عليك هنا وضع أي من الأنماط الخاصة بال
+classes
+التي ستقوم بإعادة إستخدامها في أكثر من مكان خلال عملك على الموقع 
+على سبيل المثال: النمط الخاص بالزر الأزرق الذي يستعمله المصمم في كل الصفحات تقريباً
+*/
+/*----------------------------------------------*/
+
+/*----------------------٤-----------------------*/
+/*                    LAYOUT                    */
+/*                البناء العام للصفحة           */
+/*----------------------------------------------*/
+header {
+  margin: 20px;
+  margin-right: 20px;
+}
+
+main {
+  display: grid;
+  position: relative;
+}
+body {
+  background-color: #f9fafc;
+}
+/*----------------------٥-----------------------*/
+/*                    HEADER                    */
+/*----------------------------------------------*/
+
+header .container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0, 20px, 0, 20px;
+  border-bottom: 2px solid;
+  border-color: #edeffa;
+  overflow: auto;
+  padding-bottom: 30px;
+}
+
+nav {
+  flex: 1;
+  justify-content: center;
+}
+nav ul {
+  overflow: hidden;
+}
+
+nav li {
+  float: right;
+  padding-right: 20px;
+}
+nav li a {
+  font-size: 1.6rem;
+  color: black;
+  display: block;
+}
+header .container .burger {
+  display: none;
+}
+/*----------------------٦-----------------------*/
+/*                     HERO                     */
+/*----------------------------------------------*/
+
+.hero .container {
+  display: flex;
+  width: 100%;
+  padding-top: 9%;
+  flex: 1;
+  margin-left: 80px;
+}
+.hero .container .hero__desc {
+  max-width: 25vw;
+  font-size: 1vw;
+  position: relative;
+}
+.hero__desc h1 {
+  font-family: Avenir-Next-Bold;
+  font-size: 6rem;
+}
+.hero__desc p {
+  font-size: 2.3rem;
+  padding-top: 10px;
+}
+
+.hero__desc a {
+  background-color: #362dc4;
+  color: black;
+  border: 2px solid #362dc4;
+  width: 11vw;
+  height: 5.2vh;
+  border-radius: 20px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-family: Avenir-Next-Bold;
+  color: white;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 45px;
+}
+.hero__image {
+  width: 95%;
+  display: flex;
+  justify-content: center;
+}
+
+.hero__image img {
+  width: 80%;
+}
+
+/*----------------------٧-----------------------*/
+/*              MEET YOUR MATCH                 */
+/*----------------------------------------------*/
+.meetYourMatch {
+  margin-top: 200px;
+  margin-left: 80px;
+  margin-right: 80px;
+  text-align: center;
+}
+
+.meetYourMatch .container {
+  background-color: #eeeffc;
+  border-radius: 40px;
+  position: relative;
+}
+.meetYourMatch__background {
+  position: relative;
+  top: 120px;
+}
+.meetYourMatch__background h2 {
+  font-family: Avenir-Next-Bold;
+  font-size: 4rem;
+}
+
+.meetYourMatchــform .switcher {
+  color: gray;
+  font-size: 2rem;
+  /* margin-top: 50px; */
+
+  text-align: center;
+
+  display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox; /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  display: flex;
+
+  justify-content: center;
+  flex-wrap: wrap;
+
+  -webkit-box-align: center;
+  -webkit-flex-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+
+  height: 16vh;
+}
+.meetYourMatchــform .switcher img {
+  padding: 20px;
+}
+.meetYourMatchــform .switcher input {
+  position: absolute;
+  height: 8vh;
+  opacity: 0;
+  width: 2.79vw;
+  border: none;
+}
+.widgets {
+  display: flex;
+}
+
+.form-group input {
+  background: url(../images/map-pin.png) no-repeat scroll 20px 15px;
+  padding-left: 50px;
+  height: 5.2vh;
+  width: 20vw;
+  min-width: 7vw;
+  border-radius: 40px;
+  border: 2px solid #362dc4;
+  border-right: none;
+  background-color: white;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  text-align: left;
+  position: relative;
+}
+.form-group input ::placeholder {
+  color: #362dc4;
+  opacity: 1;
+}
+.form-group button {
+  height: 5.6vh;
+  width: 12vw;
+  color: white;
+  border-radius: 40px;
+  border: 4px solid #362dc4;
+  background-color: #362dc4;
+  text-align: center;
+  position: relative;
+  right: 50px;
+}
+
+.meetYourMatch .is-searchResults {
+  margin-left: 100px;
+  margin-right: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  position: relative;
+  top: 150px;
+}
+.meetYourMatch .widget {
+  background-color: white;
+  height: 35vh;
+}
+/*----------------------٨-----------------------*/
+/*               HOW IT WORKS                   */
+/*----------------------------------------------*/
+.howItWorks {
+  margin-top: 300px;
+  text-align: center;
+}
+.howItWorks h2 {
+  font-family: Avenir-Next-Bold;
+  font-size: 4rem;
+  padding-bottom: 100px;
+}
+
+.widgets .widget {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.is-howItWorks .widget__desc {
+  padding-top: 50px;
+  max-width: 58%;
+}
+
+.is-howItWorks .widget__desc h3 {
+  font-size: 4rem;
+  padding-bottom: 20px;
+}
+.is-howItWorks .widget__desc p {
+  color: #8f8f8f;
+}
+/*----------------------٩-----------------------*/
+/*                 STORIES                      */
+/*----------------------------------------------*/
+/* .stories .container {
+  background-color: #f7f6fb;
+  width: 100vw;
+  text-align: center;
+  margin: 0;
+  margin-top: 300px;
+}
+
+.stories .container h2 {
+  font-family: Avenir-Next-Bold;
+  font-size: 4rem;
+  padding-bottom: 20px;
+  padding-top: 100px;
+}
+.stories .container .heading-paragraph {
+  position: relative;
+  width: 30%;
+  left: 35%;
+  padding-bottom: 50px;
+}
+.stories .container .widgets {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.stories .container .widgets .widget {
+  padding-left: 30px;
+}
+.stories .container .widgets .widget .widget__desc {
+  text-align: left;
+  padding-bottom: 20px;
+}
+
+.stories .container .widgets .widget .widget__desc h3 {
+  font-family: Avenir-Next;
+  font-size: 2rem;
+} */
+.stories .container {
+  background-color: #f7f6fb;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 0;
+  padding: 100px 0;
+}
+
+.stories .container h2 {
+  font-family: Avenir-Next;
+  font-size: 40px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+.stories .container .heading-paragraph {
+  text-align: center;
+  width: 35%;
+  font-size: 15px;
+  padding-bottom: 50px;
+}
+.stories .container .widgets {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.stories .container .widgets .widget {
+  width: fit-content;
+  padding: 0 30px;
+}
+.stories .container .widgets .widget .widget__desc {
+  margin: 10px 0;
+}
+.stories .container .widgets .widget .widget__desc h3 {
+  font-family: Avenir-Next;
+  padding: 10px 0;
+  font-size: 20px;
+}
+.stories .container .widgets .widget .widget__desc a {
+  font-family: Avenir-Next;
+  font-size: 13px;
+  font-weight: 600;
+  color: #3f43e0;
+}
+/*----------------------١٠----------------------*/
+/*       Actions: Change A Life, Adopt A Pet    */
+/*----------------------------------------------*/
+.actions {
+  background-color: #362dc4;
+  margin-top: 150px;
+}
+.actions .container {
+  width: 100%;
+  height: 40vh;
+  text-align: center;
+  position: relative;
+  top: 25%;
+}
+
+.actions .container h2 {
+  color: #f7f6fb;
+  font-family: Avenir-Next-Bold;
+  font-size: 4rem;
+  padding-bottom: 30px;
+}
+
+.actions .container a {
+  display: inline-table;
+  position: relative;
+
+  border-radius: 40px;
+  font-size: 2rem;
+  text-align: center;
+  width: 12vw;
+  height: 5vh;
+  vertical-align: middle;
+  line-height: 45px;
+}
+.actions .container .is-outline {
+  border: 2px solid #f7f6fb;
+  background-color: #362dc4;
+  color: #f7f6fb;
+}
+.actions .container .is-secondary {
+  border: 2px solid #362dc4;
+  background-color: #f7f6fb;
+  color: #362dc4;
+}
+
+/*---------------------١١-----------------------*/
+/*                    FOOTER                    */
+/*----------------------------------------------*/
+footer .container {
+  display: flex;
+  flex: 1;
+  width: 100%;
+  height: 30vh;
+}
+
+footer .container .copyrights {
+  width: 50%;
+  position: relative;
+  top: 69%;
+  left: 15%;
+}
+footer .container .footer-nav {
+  display: inherit;
+  position: relative;
+  top: 60%;
+  right: 9%;
+}
+footer .container .footer-nav .item {
+  padding: 40px;
+  font-size: 2rem;
+}
+footer .container .footer-nav .item h5 {
+  font-family: Avenir-Next-Bold;
+  padding-bottom: 20px;
+}
+footer .container .footer-nav .item a {
+  color: black;
+}
+
+/*----------------------١٢----------------------*/
+/*                    Responsive                */
+/*       كل ما هو متعلق بالهواتف والتابلت       */
+/*----------------------------------------------*/
+@media only screen and (max-width: 425px) {
+  main {
+    display: inherit;
+    position: relative;
+  }
+  nav {
+    display: none;
+  }
+
+  header {
+    width: 500px;
+    padding-left: 40px;
+  }
+  .hero .container {
+    flex-direction: column;
+  }
+  .hero .container .hero__desc {
+    width: 100%;
+    min-width: 450px;
+    margin-bottom: 20px;
+  }
+  .hero .container .hero__desc p {
+    padding-bottom: 100px;
+  }
+  .hero .container .hero__desc a {
+    width: 50vw;
+    height: 6.2vh;
+    border-radius: 20px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 55px;
+    font-size: 2rem;
+  }
+  .hero .container .hero__image {
+    width: 500px;
+  }
+  .meetYourMatch {
+    margin-top: 0;
+    margin-right: 0;
+    margin-left: 0;
+  }
+  .meetYourMatch .is-searchResults {
+    margin-left: 30%;
+  }
+  .meetYourMatch .container {
+    background-color: #eeeffc;
+    border-radius: 40px;
+    position: relative;
+    width: 200%;
+    height: 80vh;
+  }
+  .form-group input {
+    height: 5.4vh;
+    margin-right: 0;
+    width: 60vw;
+    min-width: 7vw;
+    border-right: none;
+    text-align: left;
+    position: relative;
+  }
+  .meetYourMatch .container .form-group input ::placeholder {
+    border: brown solid;
+  }
+  .form-group button {
+    height: 5.9vh;
+    width: 24vw;
+    text-align: center;
+    right: 50px;
+  }
+  .meetYourMatch .widget {
+    margin-bottom: 50px;
+  }
+  .howItWorks {
+    margin-top: 400%;
+    position: relative;
+    left: 45%;
+  }
+  .widgets {
+    display: inherit;
+  }
+  .stories .container {
+    margin-left: 250px;
+  }
+  .stories .container .heading-paragraph {
+    width: 200px;
+  }
+  .is-howItWorks .widget__desc p {
+    padding-bottom: 50px;
+  }
+  .actions {
+    width: 200vw;
+  }
+  .actions .container {
+    top: 90px;
+  }
+  .actions .container a {
+    width: 40vw;
+  }
+  footer {
+    align-items: center;
+
+    margin-top: 100px;
+  }
+  footer .container {
+    display: inline;
+  }
+  footer .container .footer-nav {
+    width: 500px;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    position: relative;
+    left: 20px;
+  }
+  header .container .burger.is-visible-mobile {
+    display: inline-block;
+    cursor: pointer;
+    border: none;
+    position: relative;
+    left: 300px;
+  }
+  .bar1,
+  .bar2,
+  .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+}
+
+@media (min-width: 768px) {
+  .page {
+    width: 150%;
+  }
+  .hero .container .hero__desc {
+    max-width: 250px;
+  }
+  .hero .container .hero__desc h1 {
+    font-size: 3rem;
+  }
+  .hero .container .hero__desc p {
+    margin-bottom: 90px;
+  }
+  .meetYourMatch .is-searchResults {
+    margin-left: 150px;
+    margin-right: 200px;
+  }
+
+  .howItWorks .widgets {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 400px;
+  }
+
+  .actions {
+    width: 107%;
+  }
+  .actions .container a {
+    width: 14vw;
+  }
+
+  footer .container .copyrights {
+    left: 5%;
+  }
+  footer .container .footer-nav .item {
+    font-size: 1.3rem;
+    padding: 15px;
+    min-width: 140px;
+  }
+}

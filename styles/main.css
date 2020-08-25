@@ -309,14 +309,12 @@ header .container .burger {
 /*----------------------٩-----------------------*/
 /*                 STORIES                      */
 /*----------------------------------------------*/
-/* .stories .container {
+.stories .container {
   background-color: #f7f6fb;
-  width: 100vw;
   text-align: center;
   margin: 0;
   margin-top: 300px;
 }
-
 .stories .container h2 {
   font-family: Avenir-Next-Bold;
   font-size: 4rem;
@@ -336,6 +334,7 @@ header .container .burger {
 }
 .stories .container .widgets .widget {
   padding-left: 30px;
+  width: fit-content;
 }
 .stories .container .widgets .widget .widget__desc {
   text-align: left;
@@ -345,50 +344,6 @@ header .container .burger {
 .stories .container .widgets .widget .widget__desc h3 {
   font-family: Avenir-Next;
   font-size: 2rem;
-} */
-.stories .container {
-  background-color: #f7f6fb;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  margin: 0;
-  padding: 100px 0;
-}
-
-.stories .container h2 {
-  font-family: Avenir-Next;
-  font-size: 40px;
-  padding-bottom: 20px;
-  text-align: center;
-}
-.stories .container .heading-paragraph {
-  text-align: center;
-  width: 35%;
-  font-size: 15px;
-  padding-bottom: 50px;
-}
-.stories .container .widgets {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-.stories .container .widgets .widget {
-  width: fit-content;
-  padding: 0 30px;
-}
-.stories .container .widgets .widget .widget__desc {
-  margin: 10px 0;
-}
-.stories .container .widgets .widget .widget__desc h3 {
-  font-family: Avenir-Next;
-  padding: 10px 0;
-  font-size: 20px;
-}
-.stories .container .widgets .widget .widget__desc a {
-  font-family: Avenir-Next;
-  font-size: 13px;
-  font-weight: 600;
-  color: #3f43e0;
 }
 /*----------------------١٠----------------------*/
 /*       Actions: Change A Life, Adopt A Pet    */
@@ -539,6 +494,7 @@ footer .container .footer-nav .item a {
   }
   .meetYourMatch .is-searchResults {
     margin-left: 30%;
+    width: 400px;
   }
   .meetYourMatch .container {
     background-color: #eeeffc;
@@ -577,10 +533,13 @@ footer .container .footer-nav .item a {
     display: inherit;
   }
   .stories .container {
-    margin-left: 250px;
+    width: fit-content;
+    margin-left: 100px;
+    text-align: center;
   }
   .stories .container .heading-paragraph {
-    width: 200px;
+    width: 300px;
+    left: 20%;
   }
   .is-howItWorks .widget__desc p {
     padding-bottom: 50px;
@@ -626,32 +585,39 @@ footer .container .footer-nav .item a {
     transition: 0.4s;
   }
 }
-
-@media (min-width: 768px) {
-  /* .page {
-    width: 150%;
-  } */
+@media only screen and (min-width: 768px) {
   .hero .container .hero__desc {
     max-width: 250px;
   }
   .hero .container .hero__desc h1 {
-    font-size: 3rem;
+    font-size: 4rem;
+    margin-bottom: 20px;
+    min-width: 400px;
   }
   .hero .container .hero__desc p {
     margin-bottom: 90px;
+    min-width: 390px;
+  }
+  .hero__desc a {
+    width: 20vw;
+    height: 7vh;
+    line-height: 55px;
+    font-size: 2.4rem;
   }
   .meetYourMatch .is-searchResults {
     margin-left: 150px;
     margin-right: 200px;
+    min-width: 500px;
   }
   .howItWorks .widgets {
     display: flex;
     flex-direction: column;
-    padding-bottom: 400px;
   }
-
+  .form-group input {
+    padding-left: 70px;
+  }
   .actions {
-    width: 107%;
+    width: 100%;
   }
   .actions .container a {
     width: 14vw;
@@ -663,6 +629,31 @@ footer .container .footer-nav .item a {
   footer .container .footer-nav .item {
     font-size: 1.3rem;
     padding: 15px;
+    position: relative;
+    left: 20%;
     min-width: 140px;
+  }
+  .is-opened .closebtn {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .meetYourMatch .is-searchResults {
+    min-width: 1000px;
+  }
+  footer .container .copyrights {
+    left: 10%;
+  }
+  footer .container .footer-nav {
+    top: 50%;
+    right: 0;
+  }
+  footer .container .footer-nav .item {
+    font-size: 2rem;
+    padding: 50px;
+  }
+  .is-opened .closebtn {
+    display: none;
   }
 }

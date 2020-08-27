@@ -57,6 +57,7 @@ p {
 }
 .is-secondary {
 }
+switcher
 /*----------------------٣-----------------------*/
 /*               HELPER CLASSES                 */
 /*
@@ -96,6 +97,8 @@ header .container {
   border-color: #edeffa;
   overflow: auto;
   padding-bottom: 30px;
+  padding-top: 30px;
+  margin-left: 30px;
 }
 
 nav {
@@ -220,13 +223,7 @@ header .container .burger {
 .meetYourMatchــform .switcher img {
   padding: 20px;
 }
-.meetYourMatchــform .switcher input {
-  position: absolute;
-  height: 8vh;
-  opacity: 0;
-  width: 2.79vw;
-  border: none;
-}
+
 .widgets {
   display: flex;
 }
@@ -335,6 +332,7 @@ header .container .burger {
 .stories .container .widgets .widget {
   padding-left: 30px;
   width: fit-content;
+  max-width: 300px;
 }
 .stories .container .widgets .widget .widget__desc {
   text-align: left;
@@ -344,7 +342,9 @@ header .container .burger {
 .stories .container .widgets .widget .widget__desc h3 {
   font-family: Avenir-Next;
   font-size: 2rem;
+  padding-bottom: 10px;
 }
+
 /*----------------------١٠----------------------*/
 /*       Actions: Change A Life, Adopt A Pet    */
 /*----------------------------------------------*/
@@ -538,8 +538,8 @@ footer .container .footer-nav .item a {
     text-align: center;
   }
   .stories .container .heading-paragraph {
-    width: 300px;
-    left: 20%;
+    min-width: 100%;
+    position: static;
   }
   .is-howItWorks .widget__desc p {
     padding-bottom: 50px;
@@ -586,6 +586,9 @@ footer .container .footer-nav .item a {
   }
 }
 @media only screen and (min-width: 768px) {
+  .stories .container .widgets .widget {
+    padding: 90px;
+  }
   .hero .container .hero__desc {
     max-width: 250px;
   }

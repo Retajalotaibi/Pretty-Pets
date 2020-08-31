@@ -186,6 +186,7 @@ header .container .burger {
   background-color: #eeeffc;
   border-radius: 40px;
   position: relative;
+  padding-bottom: 200px;
 }
 .meetYourMatch__background {
   position: relative;
@@ -267,11 +268,15 @@ header .container .burger {
   justify-content: space-between;
 
   position: relative;
-  top: 150px;
+  top: 250px;
 }
 .meetYourMatch .widget {
   background-color: white;
   height: 35vh;
+}
+.noDataMessage {
+  width: 100%;
+  font-size: 6rem;
 }
 /*----------------------٨-----------------------*/
 /*               HOW IT WORKS                   */

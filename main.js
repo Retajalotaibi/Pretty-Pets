@@ -16,8 +16,9 @@ function closeBar() {
 // ---------MEET YOUR MATCH--------
 
 function findData() {
-  let petName, petInfo, petCity, petImage, fillteredData, searchBar;
+  let container, petName, petInfo, petCity, petImage, fillteredData, searchBar;
   // all ot the needed element
+  container = document.querySelectorAll(".is-searchResults .widget");
   searchBar = document.getElementById("searchBar");
   petName = document.querySelectorAll(
     ".is-searchResults .widget .widget__desc h4"
@@ -31,22 +32,41 @@ function findData() {
   petImage = document.querySelectorAll(".widget__image img");
   console.log(petImage);
   // saving the input of the user
-  const searchString = searchBar.value;
-
+  const searchString = searchBar.value.toLowerCase();
   // filtering the data to the user need
   fillteredData = pets.filter((pet) => {
     return pet.city.includes(searchString);
   });
 
-  // changing the HTML and showing the filtered data
-  for (i = 0; i < fillteredData.length; i++) {
-    petInfo[
-      i
-    ].innerHTML = `${fillteredData[i].info} | ${fillteredData[i].gender}`;
-    petName[i].innerHTML = fillteredData[i].name;
-    petCity[i].innerHTML = fillteredData[i].city;
-    petImage[i].src = fillteredData[i].image;
-    petImage[i].style.width = "200px";
+  if (fillteredData.length === 0) {
+    // ckeck if there is no data then sent a message to the user
+
+    // 1 -create message
+    let noDataMessage = document.createElement("h2");
+
+    // 1.5-set every thing
+    noDataMessage.setAttribute("class", "noDataMessage");
+    noDataMessage.textContent = "no data";
+
+    // remove carts
+    container.forEach((cart) => (cart.style.display = "none"));
+
+    // show the message
+    document.querySelector(".is-searchResults").appendChild(noDataMessage);
+  } else {
+    // make sure the "no data" message is no longer here & show the carts again
+    container.forEach((cart) => (cart.style.display = "block"));
+    document.querySelector(".noDataMessage").style.display = "none";
+    // changing the HTML and showing the filtered data
+    for (i = 0; i < fillteredData.length; i++) {
+      petInfo[
+        i
+      ].innerHTML = `${fillteredData[i].info} | ${fillteredData[i].gender}`;
+      petName[i].innerHTML = fillteredData[i].name;
+      petCity[i].innerHTML = fillteredData[i].city;
+      petImage[i].src = fillteredData[i].image;
+      petImage[i].style.width = "200px";
+    }
   }
 }
 
@@ -61,6 +81,7 @@ function showMore() {
   showMoreButtons.forEach((button) => {
     console.log("i run");
     button.addEventListener("click", function (event) {
+      event.preventDefault();
       // the index needed to know which story the user want
       let index = Array.from(showMoreButtons).indexOf(event.target);
       showMoreButtons[index].style.display = "none";
@@ -87,6 +108,7 @@ function showMore() {
 
       // handling the (Show less) event
       ShowLessButton.addEventListener("click", (event) => {
+        event.preventDefault();
         //showing the button
         showMoreButtons[index].style.display = "block";
         // finding the right element and removing it
@@ -97,6 +119,7 @@ function showMore() {
     });
   });
 }
+
 // DATA :(
 let stories = [
   `Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit repellat esse
@@ -148,7 +171,7 @@ let pets = [
   {
     name: "MONTY",
     info: "Young",
-    city: "los Angeles",
+    city: "los angeles",
     gender: "female ",
     type: "Cat",
     image:
@@ -157,7 +180,7 @@ let pets = [
   {
     name: "SPARKLE",
     info: "old",
-    city: "los Angeles",
+    city: "los angeles",
     gender: "Male ",
     type: "Cat",
     image:
@@ -166,7 +189,7 @@ let pets = [
   {
     name: "PRETTY",
     info: "old",
-    city: "los Angeles",
+    city: "los angeles",
     gender: "female ",
     type: "dog",
     image:
@@ -175,7 +198,7 @@ let pets = [
   {
     name: "TARA",
     info: "Young",
-    city: "los Angeles",
+    city: "los angeles",
     gender: "Male ",
     type: "dog",
     image:
@@ -184,7 +207,7 @@ let pets = [
   {
     name: "YODA",
     info: "Young",
-    city: "London",
+    city: "london",
     gender: "Male",
     type: "Cat",
     image:
@@ -193,7 +216,7 @@ let pets = [
   {
     name: "TRUFFLES",
     info: "old",
-    city: "London",
+    city: "london",
     gender: "Female",
     type: "dog",
     image:
@@ -202,7 +225,7 @@ let pets = [
   {
     name: "roro",
     info: "Young",
-    city: "London",
+    city: "london",
     gender: "Male",
     type: "dog",
     image:
@@ -211,7 +234,7 @@ let pets = [
   {
     name: "fofo",
     info: "old",
-    city: "London",
+    city: "london",
     gender: "Male",
     type: "Cat",
     image:
